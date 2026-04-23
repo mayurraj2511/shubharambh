@@ -25,6 +25,7 @@ main {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 5;
 }
 .container-fluid{
     display: flex;
@@ -146,6 +147,12 @@ color: #1a1a1a;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.works_image:hover {
+  transform: scale(1.05);
 }
 .flex_inner2 {
     height: 98%;
