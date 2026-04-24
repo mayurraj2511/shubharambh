@@ -20,19 +20,55 @@ main {
 }
 
 /* Navbar */
+
 .navbar {
-    height: auto;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.container-fluid{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-brand {
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #111;
 }
 
+.nav-link {
+  color: #555;
+  margin-left: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1.5px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #111;
+}
+.navbar {
+  padding: 15px 40px;
+}
 
 /* Hero */
 .hero {
